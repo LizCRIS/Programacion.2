@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.Color;
 
 class Swing01 {
     public static void main(String args[]) {
@@ -10,9 +9,8 @@ class Swing01 {
         window.pack();
         window.setResizable(false);
         window.setLocationRelativeTo(null);
-
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        window.setSize(300, 400);
+        window.setSize(Confiig.WINDOW_W, Confiig.WINDOW_H);
         window.setVisible(true);
     }
 }

@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Polygon;
 import javax.swing.plaf.ColorUIResource;
-import java.awt.*;
 
 public class Paintbruush {
     private Graphics g;
@@ -20,6 +20,12 @@ public class Paintbruush {
         g.fillRect(0, 0, 400, 100);
         g.setColor(Color.YELLOW);
         g.fillOval(10, 10, 20, 20);
+    }
+
+    public void drawSun(Point p) {
+
+        g.setColor(Confiig.COLOR_SUN);
+        g.fillOval(p.getX(), p.getX(), Confiig.SUN_SIZE, Confiig.SUN_SIZE);
     }
 
     // lake
@@ -47,31 +53,48 @@ public class Paintbruush {
     }
 
     // tree
-    public void drawTree() {
-        int start = 50;
-        int top = 50;
-        int spacingTree = 50;
+    public void drawTree(int start, int top) {
+
         // draw trunk´s
-        for (int j = 0; j < 6; j++) {
-            g.setColor(COLOR_TRUNK_TREE);
-            g.fillRect((start - 10) + (spacingTree * j), top + 110, 26, 40);
-        }
+        g.setColor(COLOR_TRUNK_TREE);
+        g.fillRect(start - 10, top + 110, 26, 40);
         // draw tree's
-        for (int i = 0; i < 6; i++) {
-            g.setColor(COLOR_TREE);
-            for (int a = 0; a < 5; a++) {
-                Polygon triangle = new Polygon();
-                int height = 50;
-                int width = 70;
-                int spacing = 15;
 
-                triangle.addPoint(start, top + (spacing * a));
-                triangle.addPoint(start - (width / 2), top + height + (spacing * a));
-                triangle.addPoint(start + (width / 2), top + height + (spacing * a));
+        g.setColor(COLOR_TREE);
+        for (int i = 0; i < 5; i++) {
+            Polygon triangle = new Polygon();
+            int height = 50;
+            int width = 70;
+            int spacing = 15;
 
-                g.fillPolygon(triangle);
-            }
+            triangle.addPoint(start, top + (spacing * i));
+            triangle.addPoint(start - (width / 2), top + height + (spacing * i));
+            triangle.addPoint(start + (width / 2), top + height + (spacing * i));
+
+            g.fillPolygon(triangle);
         }
+
+    }
+
+    // Ovni
+    public void drawOvni() {
+        g.setColor(Confiig.COLOR_OVNIB);
+        g.fillOval(30, 60, 100, 40);
+        g.setColor(Confiig.COLOR_OVNI);
+        g.fillOval(50, 50, 60, 25);
+    }
+
+    // Plane
+    public void drawPlane() {
+        g.setColor(Confiig.COLOR_PLANE);
+        g.fillOval(150, 60, 100, 30);
+        g.setColor(Confiig.COLOR_PLANE);
+        g.fillOval(200, 25, 20, 100);
+        g.setColor(Confiig.COLOR_PLANE);
+        g.fillOval(170, 40, 10, 30);
+        g.setColor(Confiig.COLOR_PLANE);
+        g.fillOval(165, 40, 20, 10);
+
     }
 
 }
