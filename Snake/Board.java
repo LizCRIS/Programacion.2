@@ -61,6 +61,21 @@ class Board extends JPanel implements ActionListener, KeyListener {
         Point c = body.get(body.size() - 1);
         g.setColor(snake.getColorCola());
         g.fillOval(c.getX() * Config.SIZE_SEG, c.getY() * Config.SIZE_SEG, Config.SIZE_SEG, Config.SIZE_SEG);
+        
+        // vidas
+        /*
+         * Point head = body.get(HEAD);
+         * int vidas = 0;
+         * for (int i = 1; i < body.size(); i++) {
+         * if (head.areTheSame(body.get(i))) {
+         * vidas--;
+         * if (vidas == 0) {
+         * System.exit(0);
+         * }
+         * snake = new Snake();
+         * }
+         * }
+         */
 
         /*
          * for(Point p: snake.getBody()){
