@@ -13,14 +13,14 @@ public class Canvas extends JPanel {
     public Canvas() {
 
         setPreferredSize(new Dimension(400, 300));
-        setBackground(Color.GRAY);
+        setBackground(Color.BLACK);
 
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.RED);
+        g.setColor(Color.BLUE);
         Polygon polygon = new Polygon();
         for (int i = 0; i < points.size(); i++) {
             polygon.addPoint((int) Math.round(points.get(i).getX()), (int) Math.round(points.get(i).getY()));

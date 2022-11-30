@@ -1,7 +1,11 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-class Spacecraft implements Serializable {
+class Spacecraft implements Serializable, ActionListener, KeyListener {
     private ArrayList<Point> points = new ArrayList<Point>();
     private ArrayList<Point> pointsT = new ArrayList<Point>();
     private double speed;
@@ -114,6 +118,40 @@ class Spacecraft implements Serializable {
     public void print() {
         rotate();
         translate();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        int codeKey = e.getKeyCode();
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        ArrayList<Point> points = new ArrayList<Point>();
+        for (int i = 0; i < points.size(); i++) {
+            double xP;
+            double yP;
+            xP = points.get(i).getX() * Math.cos(angle) - points.get(i).getY() * Math.sin(angle);
+            yP = points.get(i).getX() * Math.sin(angle) + points.get(i).getY() * Math.cos(angle);
+            pointsT.get(i).setX(xP);
+            pointsT.get(i).setY(yP);
+        }
+        int xP = pointsT.get(i).setX(xP);
+
     }
 
 }
