@@ -1,0 +1,10 @@
+Profe la verdad de aqui ya no supe seguir, tenia la idea principal era hacer dos
+clases donde se metieran los metodos de los paquetes, la otra era usuarios donde se meterian
+lo de llamda, mensajes, portabilidad, y recargas,
+la otra era una clase por cada cliente y un servidor para las llm¿amadas y mensajes entre usuarios, 
+la clase de usuario hereda de telefonia para asi poder ingresar a los paquetes 
+la clase de cada cliente que en este caso son pepito y juan heredan de usuarios 
+y dentro de las clases de pepito y juan se podrian las acciones ya sea llamada, mensaje, recargha y 
+lo que indicaba el documento, sin la necesidad de interactuar con el programa creo a grandes rasgos era
+la implementacion que tenia planeada, al igual lo que si esta funcionando y esta completo es 
+el servidor y la parte de enviar mensjae de un usuario a otro
